@@ -1,0 +1,72 @@
+{
+  "entities": [
+    {
+      "name": "devices",
+      "fields": [
+        { "name": "deviceId", "type": "string", "description": "Unique ESP32 hardware device identifier" },
+        { "name": "deviceName", "type": "string", "description": "Human-readable node location name" },
+        { "name": "status", "type": "string", "description": "Operational connectivity status: online | offline | degraded" },
+        { "name": "firmwareVersion", "type": "string", "description": "Firmware semver build version" },
+        { "name": "hardwareVersion", "type": "string", "description": "Microcontroller board model" },
+        { "name": "wifiStrength", "type": "number", "description": "RSSI signal strength in dBm" },
+        { "name": "ipAddress", "type": "string", "description": "Local IP network address" },
+        { "name": "macAddress", "type": "string", "description": "Hardware MAC address" },
+        { "name": "uptimeSeconds", "type": "number", "description": "System operational uptime in seconds" },
+        { "name": "lastSeen", "type": "string", "description": "ISO timestamp of last telemetry ping" },
+        { "name": "createdAt", "type": "string", "description": "Provisioning timestamp" }
+      ]
+    },
+    {
+      "name": "sensorReadings",
+      "fields": [
+        { "name": "deviceId", "type": "string", "description": "Parent device identifier" },
+        { "name": "temperature", "type": "number", "description": "Water temperature in Celsius" },
+        { "name": "ph", "type": "number", "description": "pH level scale 0-14" },
+        { "name": "tds", "type": "number", "description": "Total Dissolved Solids in ppm" },
+        { "name": "turbidity", "type": "number", "description": "Water clarity in NTU" },
+        { "name": "waterLevel", "type": "number", "description": "Reservoir tank capacity level percentage" },
+        { "name": "timestamp", "type": "string", "description": "ISO 8601 reading timestamp" },
+        { "name": "qualityStatus", "type": "string", "description": "WQI quality evaluation text" }
+      ]
+    },
+    {
+      "name": "alerts",
+      "fields": [
+        { "name": "id", "type": "string", "description": "Alert unique record ID" },
+        { "name": "deviceId", "type": "string", "description": "Source device ID" },
+        { "name": "sensorId", "type": "string", "description": "Target parameter name" },
+        { "name": "sensorName", "type": "string", "description": "Display sensor title" },
+        { "name": "severity", "type": "string", "description": "critical | warning | info" },
+        { "name": "message", "type": "string", "description": "Alert notification text" },
+        { "name": "value", "type": "number", "description": "Breached parameter value" },
+        { "name": "unit", "type": "string", "description": "Measurement unit string" },
+        { "name": "threshold", "type": "string", "description": "Safety operational boundary" },
+        { "name": "timestamp", "type": "string", "description": "ISO timestamp when alert triggered" },
+        { "name": "resolved", "type": "boolean", "description": "Resolution acknowledgement flag" },
+        { "name": "resolvedAt", "type": "string", "description": "ISO timestamp of resolution" }
+      ]
+    },
+    {
+      "name": "reports",
+      "fields": [
+        { "name": "reportId", "type": "string", "description": "Report ID" },
+        { "name": "title", "type": "string", "description": "Report title" },
+        { "name": "generatedAt", "type": "string", "description": "Generation timestamp" },
+        { "name": "dateRange", "type": "string", "description": "Sampling range: 24h | 7d | 30d | custom" },
+        { "name": "format", "type": "string", "description": "Export format: pdf | csv | json" },
+        { "name": "preparedBy", "type": "string", "description": "Officer name" },
+        { "name": "department", "type": "string", "description": "Department name" },
+        { "name": "summary", "type": "map", "description": "Summary telemetry statistics" }
+      ]
+    },
+    {
+      "name": "users",
+      "fields": [
+        { "name": "uid", "type": "string", "description": "Firebase Auth User ID" },
+        { "name": "email", "type": "string", "description": "Account email address" },
+        { "name": "role", "type": "string", "description": "Access role: admin | operator" },
+        { "name": "createdAt", "type": "string", "description": "User creation timestamp" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AquaMonitor - Water Quality Monitoring System",
+  "description": "Product design and specification for AquaMonitor IoT water quality monitoring dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
